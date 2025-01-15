@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+<!-- Your HTML Here -->
+    <body>
+        <div class="container">
+            <img src="images/nzc.jpg" class="profile" alt="Profile Picture">
+
+            <div class="name-container">
+                <h1 class="name">Noah Cook</h1>
+            </div>
+
+            <hr>
+
+            <div class="tabs">
+                <button class="tablinks" onclick="openCity(event, 'Intro')" id="def">Intro</button>
+                <button class="tablinks" onclick="openCity(event, 'Background')">Background</button>
+                <button class="tablinks" onclick="openCity(event, 'Hobbies')">Hobbies</button>
+            </div>
+
+            <hr>
+              
+              <div id="Intro" class="tabcontent">
+                <h3>Intro</h3>
+                <p>Hello! My name is Noah Cook, and I am a second year at Georgia Tech. I am studying Computer Science with a concentration in Intelligence and Theory, and I am currently in Georgia Tech's Create-X Program. Use the tabs above to read more about me!</p>
+              </div>
+              
+              <div id="Background" class="tabcontent">
+                <h3>Background</h3>
+                <p>I was born and raised in Southeast Georgia around the Okefenokee Swamp. Since a young age I have been tinkering with computers, and self-studying game development was my intro to CS. Since then I have worked in IT, done ML research, and recently got into web development!</p> 
+              </div>
+              
+              <div id="Hobbies" class="tabcontent">
+                <h3>Hobbies</h3>
+                <p>In my spare time I like to read, work on personal projects, and hang out with friends. I am excited to watch the College Football National Championship, and I am hoping GT will make it to the play-offs next year haha.</p>
+              </div>
+              
+
+              <!-- Basic Tab Functionality Script -->
+              <script>
+              function openCity(evt, cityName) {
+                var i, tabcontent, tablinks;
+                tabcontent = document.getElementsByClassName("tabcontent");
+                for (i = 0; i < tabcontent.length; i++) {
+                  tabcontent[i].style.display = "none";
+                }
+                tablinks = document.getElementsByClassName("tablinks");
+                for (i = 0; i < tablinks.length; i++) {
+                  tablinks[i].className = tablinks[i].className.replace(" active", "");
+                }
+                document.getElementById(cityName).style.display = "block";
+                evt.currentTarget.className += " active";
+              }
+
+              document.getElementById("def").click();
+              </script>
+        </div>
+    </body>
+</html>
